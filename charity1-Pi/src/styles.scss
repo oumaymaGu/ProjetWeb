@@ -16,4 +16,4 @@
 @import "assets/layout/variables/dark";
 @import "assets/layout/variables/light";*/
 
-@import "assets/layout/layout.scss";
+@use "assets/layout/layout" as *;
