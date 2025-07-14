@@ -1,0 +1,152 @@
+.bh-title {
+  color: #c8102e;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.table-container {
+  margin: 20px auto;              
+  max-width: 1000px;              
+  padding: 0 12px;                
+  overflow: hidden;
+}
+
+
+.bh-table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border-radius: 12px;
+  width: 100%;
+}
+
+
+
+.bh-table-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.bh-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.bh-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #c8102eaa;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+.bh-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #a00c23;
+}
+
+.bh-table {
+  width: 100%;
+  min-width: 800px;
+  max-width: 950px;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(200, 16, 46, 0.08);
+}
+
+.bh-table th,
+.bh-table td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.bh-table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* En-tête fixe */
+.bh-table th {
+  position: sticky;
+  top: 0;
+  background: #f8f9fa;
+  color: #c8102e;
+  font-weight: bold;
+  border-bottom: 2px solid #c8102e22;
+  z-index: 1;
+}
+
+
+.bh-table tr:not(:last-child) {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.reclamation-statut {
+  padding: 3px 14px;
+  border-radius: 12px;
+  font-size: 0.95em;
+  font-weight: 500;
+  background: #ffeaea;
+  color: #c8102e;
+  border: 1px solid #c8102e33;
+}
+
+.reclamation-statut.traite {
+  background: #e6ffe9;
+  color: #1e7e34;
+  border: 1px solid #28a74533;
+}
+
+.bh-action-btn {
+  background-color: #c8102e;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: background 0.2s;
+}
+
+.bh-action-btn.delete {
+  background-color: #dc3545;
+}
+
+.bh-action-btn.cancel {
+  background-color: #6c757d;
+}
+
+.bh-action-btn:hover {
+  background-color: #a00c23;
+}
+
+.bh-action-btn.delete:hover {
+  background-color: #b52a37;
+}
+
+.bh-action-btn.cancel:hover {
+  background-color: #495057;
+}
+
+.bh-textarea {
+  width: 100%;
+  min-height: 60px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  padding: 8px;
+  font-size: 15px;
+  margin-bottom: 8px;
+  resize: vertical;
+}
+
+.bh-table tbody tr:hover {
+  background-color: #fff5f6;
+  transition: background-color 0.2s ease-in-out;
+}

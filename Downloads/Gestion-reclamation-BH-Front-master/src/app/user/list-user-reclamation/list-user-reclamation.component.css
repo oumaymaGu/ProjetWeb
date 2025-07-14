@@ -1,0 +1,96 @@
+.bh-title {
+  color: #c8102e;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.table-container {
+  margin: 20px auto;
+  max-width: 1000px;
+  padding: 0 12px;
+}
+
+/* Conteneur avec scroll */
+.bh-table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* Scrollbar stylée */
+.bh-table-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.bh-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.bh-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #c8102eaa;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+.bh-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #a00c23;
+}
+
+.bh-table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(200, 16, 46, 0.08);
+  table-layout: fixed;
+}
+
+.bh-table th,
+.bh-table td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 15px;
+}
+
+/* En-tête sticky */
+.bh-table thead th {
+  position: sticky;
+  top: 0;
+  background: #f8f9fa;
+  color: #c8102e;
+  font-weight: bold;
+  border-bottom: 2px solid #c8102e22;
+  z-index: 2;
+}
+
+.bh-table tr:not(:last-child) {
+  border-bottom: 1px solid #e9ecef;
+}
+
+/* Hover */
+.bh-table tbody tr:hover {
+  background-color: #fff5f6;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Statut */
+.reclamation-statut {
+  padding: 3px 14px;
+  border-radius: 12px;
+  font-size: 0.95em;
+  font-weight: 500;
+  background: #ffeaea;
+  color: #c8102e;
+  border: 1px solid #c8102e33;
+}
+.reclamation-statut.traite {
+  background: #e6ffe9;
+  color: #1e7e34;
+  border: 1px solid #28a74533;
+}

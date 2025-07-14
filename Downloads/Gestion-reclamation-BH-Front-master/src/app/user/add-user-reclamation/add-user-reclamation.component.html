@@ -1,0 +1,196 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+
+<div class="content" style="margin-left: 250px; margin-top: 50px; padding: 20px;">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="reclamation-container">
+  <div class="reclamation-card">
+    <h2 class="bh-title">Nouvelle Réclamation</h2>
+    <form [formGroup]="reclamationForm" (ngSubmit)="addReclamation()" class="reclamation-form">
+      
+      <div class="form-group">
+        <label for="sujet">Sujet</label>
+        <input
+          id="sujet"
+          type="text"
+          formControlName="sujet"
+          placeholder="Sujet de la réclamation"
+        />
+        <div class="error" *ngIf="reclamationForm.get('sujet')?.touched && reclamationForm.get('sujet')?.invalid">
+          <small *ngIf="reclamationForm.get('sujet')?.errors?.['required']">Sujet requis</small>
+          <small *ngIf="reclamationForm.get('sujet')?.errors?.['minlength']">Sujet trop court</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          formControlName="description"
+          placeholder="Décrivez votre réclamation"
+        ></textarea>
+        <div class="error" *ngIf="reclamationForm.get('description')?.touched && reclamationForm.get('description')?.invalid">
+          <small *ngIf="reclamationForm.get('description')?.errors?.['required']">Description requise</small>
+          <small *ngIf="reclamationForm.get('description')?.errors?.['minlength']">Description trop courte</small>
+        </div>
+      </div>
+
+      <div class="btn-container">
+        <button type="submit" class="bh-btn" [disabled]="reclamationForm.invalid">Envoyer</button>
+      </div>
+
+      <div *ngIf="showSuccess" class="popup-success">
+        ✅ Votre réclamation a été envoyée avec succès !
+      </div>
+    </form>
+  </div>
+</div>
+
+
+  
+
+<style>
+.reclamation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.reclamation-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(200, 16, 46, 0.08);
+  padding: 32px 36px 28px 36px;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 0;
+}
+
+.bh-title {
+  color: #c8102e;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.reclamation-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.reclamation-form label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #343a40;
+  font-size: 15px;
+}
+
+.reclamation-form input,
+.reclamation-form textarea {
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border 0.2s, box-shadow 0.2s;
+  resize: none;
+}
+
+.reclamation-form input:focus,
+.reclamation-form textarea:focus {
+  outline: none;
+  border-color: #c8102e;
+  box-shadow: 0 0 4px #c8102e44;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.bh-btn {
+  width: 70%;
+  max-width: 200px;
+  background: linear-gradient(90deg, #c8102e 60%, #e52d27 100%);
+  color: #fff;
+  padding: 12px 0;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px #c8102e22;
+  transition: background 0.3s, transform 0.2s;
+  letter-spacing: 1px;
+}
+
+.bh-btn:hover {
+  background: linear-gradient(90deg, #a00c23 60%, #c8102e 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.reclamation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reclamation-item {
+  background: #f8f9fa;
+  margin-bottom: 16px;
+  padding: 18px 16px 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #c8102e11;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reclamation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reclamation-sujet {
+  font-weight: bold;
+  color: #c8102e;
+  font-size: 1.1em;
+}
+
+.reclamation-statut {
+  padding: 3px 14px;
+  border-radius: 12px;
+  font-size: 0.95em;
+  font-weight: 500;
+  background: #ffeaea;
+  color: #c8102e;
+  border: 1px solid #c8102e33;
+}
+
+.reclamation-statut.traite {
+  background: #e6ffe9;
+  color: #1e7e34;
+  border: 1px solid #28a74533;
+}
+
+.reclamation-desc {
+  color: #343a40;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.reclamation-date {
+  font-size: 0.93em;
+  color: #888;
+  text-align: right;
+}
+</style>

@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+
+<div class="content" style="margin-left: 250px; margin-top: 100px; padding: 20px;">
+  <router-outlet></router-outlet>
+</div>
+
+
+<h2 class="bh-title">📋 Mes Réclamations</h2>
+
+<div class="table-container">
+  <div class="bh-table-wrapper">
+    <table class="bh-table">
+      <thead>
+        <tr>
+          <th>Sujet</th>
+          <th>Description</th>
+          <th>Statut</th>
+          <th>Date de réclamation</th>
+          <th>Réponse</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of reclamations">
+          <td>{{ r.sujet }}</td>
+          <td>{{ r.description }}</td>
+          <td>
+            <span class="reclamation-statut"
+                  [ngClass]="{
+                    'traite': r.statut === 'traité',
+                    'en-cours': r.statut === 'en cours'
+                  }">
+              {{ r.statut || 'Inconnu' }}
+            </span>
+          </td>
+          <td>{{ r.date_creation | date: 'short' }}</td>
+          <td>
+            <span *ngIf="r.reponse; else attente">{{ r.reponse }}</span>
+            <ng-template #attente><i>En attente</i></ng-template>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
